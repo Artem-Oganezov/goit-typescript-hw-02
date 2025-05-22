@@ -1,5 +1,7 @@
 import s from "./ImageCard.module.css";
-const ImageCard = ({ handleImage, image }) => {
+import { ImageCardProps } from "../../types";
+
+const ImageCard = ({ handleImage, image }: ImageCardProps) => {
   return (
     <div>
       <img

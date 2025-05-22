@@ -4,7 +4,7 @@ import "./index.css";
 import "modern-normalize";
 import App from "./App.jsx";
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <App />
   </StrictMode>

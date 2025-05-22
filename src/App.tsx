@@ -11,19 +11,20 @@ import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import ImageModal from "./components/ImageModal/ImageModal";
 import ReactModal from "react-modal";
 ReactModal.setAppElement("#root");
+import { Image } from "./types";
 
 function App() {
-  const [data, setData] = useState([]);
-  const [query, setQuery] = useState("");
-  const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-  const [totalPage, setTotalPage] = useState(1);
-  const [isError, setIsError] = useState(false);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(null);
+  const [data, setData] = useState<Image[]>([]);
+  const [query, setQuery] = useState<string>("");
+  const [page, setPage] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [totalPage, setTotalPage] = useState<number>(0);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [currentImage, setCurrentImage] = useState<Image | null>(null);
 
-  const handleImage = (image) => {
-    setCurrentImage(image);
+  const handleImage = (item: Image) => {
+    setCurrentImage(item);
     openModal();
   };
 
@@ -74,7 +75,7 @@ function App() {
     };
   }, [query, page]);
 
-  const handleChangeValue = (newQuery) => {
+  const handleChangeValue = (newQuery: string) => {
     setQuery(newQuery);
     setPage(1);
     setData([]);

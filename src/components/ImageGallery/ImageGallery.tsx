@@ -1,7 +1,8 @@
 import ImageCard from "../ImageCard/ImageCard";
 import s from "./ImageGallery.module.css";
+import { ImageGalleryProps } from "../../types";
 
-const ImageGallery = ({ data, handleImage }) => {
+const ImageGallery = ({ data, handleImage }: ImageGalleryProps) => {
   return (
     <ul className={s.gallery}>
       {data.map((item) => (

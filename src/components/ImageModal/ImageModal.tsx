@@ -1,7 +1,8 @@
 import ReactModal from "react-modal";
 import s from "./ImageModal.module.css";
+import { ImageModalProps } from "../../types";
 
-const ImageModal = ({ isOpen, onClose, image }) => {
+const ImageModal = ({ isOpen, onClose, image }: ImageModalProps) => {
   return (
     <>
       <ReactModal
